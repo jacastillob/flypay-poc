@@ -1,0 +1,37 @@
+﻿<FlexLayout
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FlyPay.Views.NavBarView"
+    Direction="{OnIdiom Phone=Row,Default=Column}"
+    JustifyContent="{OnIdiom Phone=Center, Default=Start}"
+    BackgroundColor="{OnIdiom Phone={StaticResource Background_Mid}, Default={StaticResource Background_Mid}}">
+
+    <FlexLayout.Resources>
+        <Style TargetType="ImageButton">
+            <Setter Property="Margin" Value="{OnIdiom Phone='25,5',Default='0,50,0,25'}"/>
+        </Style>
+    </FlexLayout.Resources>
+
+    <ImageButton
+        x:Name="HomeTab"
+         Source="tab_home.png"
+        Clicked="HomeTab_Clicked"/>
+    <ImageButton
+        x:Name="MapTab"
+        Source="tab_map.png"
+        Clicked="MapTab_Clicked"/>
+    <ImageButton
+        x:Name="CompassTab"
+        Source="tab_compass.png"
+        Clicked="CompassTab_Clicked"/>
+    <ImageButton
+        x:Name="FavoritesTab"
+        Source="tab_favorites.png"
+        Clicked="FavoritesTab_Clicked"/>
+   
+    <ImageButton
+        x:Name="SettingsTab"
+        Source="tab_settings.png"
+        Clicked="SettingsTab_Clicked" />
+
+</FlexLayout>

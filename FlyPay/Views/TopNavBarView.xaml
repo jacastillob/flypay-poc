@@ -1,0 +1,35 @@
+﻿<StackLayout
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FlyPay.Views.TopNavBarView" >
+
+    <Frame BorderColor="Transparent"
+                   HasShadow="True"
+                   HeightRequest="80"
+                   Margin="0"
+                   Padding="0"
+                   CornerRadius="0">
+        <Frame.Background>
+            <!-- StartPoint defaults to (0,0) -->
+            <LinearGradientBrush EndPoint="1,0">
+                <GradientStop Color="#00b5e2 "
+                                        Offset="0.1" />
+                <GradientStop Color="#003da5"
+                                        Offset="0.4" />
+                <GradientStop Color="#d40f7d"
+                                        Offset="1.1" />
+            </LinearGradientBrush>
+        </Frame.Background>
+
+        <Grid ColumnDefinitions="{OnIdiom Phone='*,2*,*', Default='*,2*,*'}">
+
+            <Image Source="flypay_d_100_80px.svg"  Grid.Row="{OnIdiom Phone=0, Default=0}"  Grid.Column="{OnIdiom Phone=1, Default=1}"  WidthRequest="100" HeightRequest="80" HorizontalOptions="Center" />
+            <Button Style="{DynamicResource BtnLogOut}"   BorderWidth="0" BorderColor="Transparent"  Text="Logout" Clicked="LogoutBtn_Clicked" Grid.Row="{OnIdiom Phone=0, Default=0}" Grid.Column="{OnIdiom Phone=2, Default=2}"  HorizontalOptions="End"  />
+            
+        </Grid>
+        
+        
+      
+    </Frame>
+
+</StackLayout>

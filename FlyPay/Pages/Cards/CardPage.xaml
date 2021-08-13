@@ -1,0 +1,69 @@
+﻿<ContentPage
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:m="clr-namespace:FlyPay.Models"
+	xmlns:v="clr-namespace:FlyPay.Views"
+	NavigationPage.HasNavigationBar="False"
+	xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+	ios:Page.UseSafeArea="True"
+	Title="FlyPay"
+	x:Class="FlyPay.Pages.CardPage"
+	BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <Grid
+		Margin="{OnPlatform iOS='0,70,0,0', Default='0'}"
+		ColumnDefinitions="{OnIdiom Phone='*', Default='68,*'}"
+		RowDefinitions="{OnIdiom Phone='80,*,68', Default='*'}"
+		>
+        <!-- Top Menu -->
+        <v:TopNavBarView
+			x:Name="TopNavBar"
+			Grid.Row="{OnIdiom Phone=0, Default=0}"/>
+        <BoxView HeightRequest="1" />
+
+        <!-- Main content -->
+        <ScrollView
+			Grid.Row="{OnIdiom Phone=1, Default=0}"
+			Grid.Column="{OnIdiom Phone=0,Default=1}">
+            <StackLayout
+				Padding="{OnIdiom Phone='10,30',Default='10,30'}"
+				Spacing="{OnIdiom Phone=10,Default=20}">
+
+                <StackLayout>
+                    <Label Style="{DynamicResource LblSubTitle}"  FontAttributes="Bold" Text="Payment Card **** **** **** 6598" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                    <Label Style="{DynamicResource LblSubTitle}" Text="Edit your payment card details below"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+                <StackLayout Padding="0,50,0,0">
+                    <Frame>
+                        <StackLayout  Margin="0" Padding="10">
+                            <Label  Style="{DynamicResource LblTitleEntry}"  FontAttributes="Bold" Text="Name on card" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />
+                            <Entry   Placeholder="Name on card" Text="Jane Doe"/>
+                            <StackLayout>
+                                <Label  Style="{DynamicResource LblTitleEntry}" FontAttributes="Bold" Text="Expiry date(MM/YY)" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />
+                                <FlexLayout
+								AlignItems="Center"
+								AlignContent="CenterAndExpand"  >
+
+                                    <Entry   Placeholder="MM/YY" Text="10/24"/>
+                                    <Entry   Placeholder="Card nickname (optional)" Text="Groceries"/>
+                                </FlexLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Padding="0,50,0,0">
+                    <Button Text="Update payment card details" Clicked="UpdateBtn_Clicked"/>
+                    <Label Style="{DynamicResource LblCancel}"   FontAttributes="Bold" Text="Delete payment card" HorizontalOptions="CenterAndExpand" />
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Menu -->
+        <v:NavBarView
+			x:Name="NavBar"
+			Grid.Row="{OnIdiom Phone=2, Default=0}"/>
+
+    </Grid>
+
+</ContentPage>

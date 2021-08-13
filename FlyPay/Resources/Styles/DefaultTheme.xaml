@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+					xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+					xmlns:app="clr-namespace:FlyPay.Resources.Styles"
+					x:Class="FlyPay.Resources.Styles.DefaultTheme"
+					xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls">
+
+    <!--Colours -->
+    <Color x:Key="PageBackgroundColor">#efefef</Color>
+    <Color x:Key="PrimaryTextColor">Black</Color>
+    <Color x:Key="PrimaryColor">#007dc2</Color>
+    <Color x:Key="Background_Mid">#f8f9fa</Color>
+    <Color x:Key="Background_BoxView">#ccc</Color>
+    <Color x:Key="Background_10">#00b5e2</Color>
+    <Color x:Key="Background_44">#003da5</Color>
+    <Color x:Key="Background_100">#d40f7d</Color>
+    <Color x:Key="Background_DarkGray">#737272</Color>
+    <Color x:Key="Gray">#ccc</Color>
+
+    
+
+    <!--Fonts -->
+    <OnPlatform x:Key="LittleSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="11"/>
+        <On Platform="Android" Value="12"/>
+    </OnPlatform>
+
+    <OnPlatform x:Key="MidMediumSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="12"/>
+        <On Platform="Android" Value="14"/>
+    </OnPlatform>
+
+    <OnPlatform x:Key="MediumSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="15"/>
+        <On Platform="Android" Value="15"/>
+    </OnPlatform>
+
+    <OnPlatform x:Key="LargeSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="16"/>
+        <On Platform="Android" Value="18"/>
+    </OnPlatform>
+
+    <OnPlatform x:Key="LargerSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="18"/>
+        <On Platform="Android" Value="20"/>
+    </OnPlatform>
+
+    <OnPlatform x:Key="BigSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="20"/>
+        <On Platform="Android" Value="22"/>
+    </OnPlatform>
+
+    <OnPlatform x:Key="ExtraBigSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="24"/>
+        <On Platform="Android" Value="28"/>
+    </OnPlatform>
+
+    <OnPlatform x:Key="HugeSize" x:TypeArguments="x:Double">
+        <On Platform="iOS" Value="32"/>
+        <On Platform="Android" Value="34"/>
+    </OnPlatform>
+    <!--Target Types -->
+    <Style x:Key="LblMoneyTitle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Background_DarkGray}" />
+        <Setter Property="FontSize" Value="{DynamicResource HugeSize}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+    <Style x:Key="LblTitle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+        <Setter Property="FontSize" Value="{DynamicResource ExtraBigSize}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
+
+    <Style x:Key="LblSubTitle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+        <Setter Property="FontSize" Value="{DynamicResource BigSize}" />
+    </Style>
+    <Style x:Key="LblMidTitle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+        <Setter Property="FontSize" Value="{DynamicResource LargerSize}" />
+    </Style>
+    <Style x:Key="LblTitleEntry" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+        <Setter Property="FontSize" Value="{DynamicResource LargeSize}" />
+    </Style>
+    <Style x:Key="LblSubTitleEntry" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
+        <Setter Property="FontSize" Value="{DynamicResource MediumSize}" />
+    </Style>
+    
+    <Style x:Key="LblEdit" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="FontSize" Value="{DynamicResource LargerSize}" />
+    </Style>
+    <Style x:Key="LblCancel" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray}" />
+        <Setter Property="FontSize" Value="{DynamicResource LargerSize}" />
+        <Setter Property="FontAttributes" Value="Italic" />
+    </Style>
+
+    <Style TargetType="Frame">
+        <Setter Property="BorderColor"
+				Value="Gray"/>
+        <Setter Property="HasShadow"
+				Value="True"/>
+        <Setter Property="Margin"
+				Value="0"/>
+        <Setter Property="Padding"
+				Value="0"/>
+        <Setter Property="CornerRadius"
+				Value="5"/>
+        <Setter Property="BackgroundColor"
+				Value="White"/>
+    </Style>
+
+    <Style TargetType="ImageButton">
+        <Setter Property="BackgroundColor"
+				Value="Transparent"/>
+        <Setter Property="BorderColor"
+				Value="Transparent"/>
+        <Setter Property="android:ImageButton.ShadowColor"
+				Value="Transparent"/>
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="FontSize" Value="{DynamicResource LargeSize}" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="Padding" Value="10" />
+    </Style>
+
+    <Style x:Key="BtnEdit" TargetType="Button">
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="FontSize" Value="{DynamicResource MediumSize}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+    
+  
+
+
+    <Style x:Key="BtnLogOut"  TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="FontSize" Value="{DynamicResource LargeSize}" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style Class="HRule"
+           TargetType="BoxView">
+        <Setter Property="HeightRequest" Value="2"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="BackgroundColor" Value="{StaticResource Background_BoxView}"/>
+    </Style>
+   
+
+</ResourceDictionary>

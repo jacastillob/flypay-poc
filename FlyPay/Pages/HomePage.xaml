@@ -1,0 +1,151 @@
+﻿<ContentPage
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:m="clr-namespace:FlyPay.Models"
+	xmlns:v="clr-namespace:FlyPay.Views"
+	NavigationPage.HasNavigationBar="False"
+	xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+	ios:Page.UseSafeArea="True"
+	Title="FlyPay"
+	x:Class="FlyPay.Pages.HomePage"
+    BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <Grid
+		Margin="{OnPlatform iOS='0,70,0,0', Default='0'}"
+		ColumnDefinitions="{OnIdiom Phone='*', Default='68,*'}"
+		RowDefinitions="{OnIdiom Phone='80,*,68', Default='*'}"
+		>
+        <!-- Top Menu -->
+        <v:TopNavBarView
+			x:Name="TopNavBar"
+			Grid.Row="{OnIdiom Phone=0, Default=0}"/>
+        <BoxView HeightRequest="1" />
+
+        <!-- Main content -->
+        <ScrollView
+            Grid.Row="{OnIdiom Phone=1, Default=0}"
+			Grid.Column="{OnIdiom Phone=0,Default=1}">
+            <StackLayout
+				Padding="{OnIdiom Phone='0,30',Default='0,30'}"
+				Spacing="{OnIdiom Phone=10,Default=20}">
+
+                <Label Style="{DynamicResource LblTitle}"  Text="Account overview" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                <Button Text="Create In-Store QR"   Clicked="PaymentBtn_Clicked"/>
+                <StackLayout  Margin="0" Padding="10">
+                    <Frame>
+                        <StackLayout  HeightRequest="230" >
+
+                            
+                            <FlexLayout
+                                AlignItems="Center"
+                                AlignContent="CenterAndExpand"
+                                JustifyContent="SpaceEvenly">
+
+                                <Label Style="{DynamicResource LblSubTitle}" FontAttributes="Bold" Text="Jane Doe"/>
+                                <Image Source="mastercard.svg" HorizontalOptions="EndAndExpand"
+                                       WidthRequest="100" HeightRequest="100"/>
+
+                            </FlexLayout>
+
+                            <FlexLayout
+                                AlignItems="Center"
+                                AlignContent="CenterAndExpand"
+                                JustifyContent="SpaceEvenly">
+
+                                <Label Style="{DynamicResource LblSubTitle}"  Text="**** **** **** 6789 " HorizontalOptions="StartAndExpand" />
+                                <Label Style="{DynamicResource LblSubTitle}"  Text="10/21 " HorizontalOptions="EndAndExpand" />
+
+                            </FlexLayout>
+                            <Button   Text="Edit" Clicked="CardBtn_Clicked"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout  Margin="0" Padding="10">
+                    <Frame>
+                        <StackLayout HeightRequest="230" >
+                            
+                            <FlexLayout
+                                AlignItems="Center"
+                                AlignContent="CenterAndExpand"
+                                JustifyContent="SpaceEvenly">
+
+                                <Label Style="{DynamicResource LblSubTitle}" FontAttributes="Bold" Text="Jane Doe"/>
+                                <Image Source="flybuys.svg" VerticalOptions="CenterAndExpand" WidthRequest="100" HeightRequest="100"/>
+                                
+                            </FlexLayout>
+
+                            <FlexLayout
+                                AlignItems="Center"
+                                AlignContent="CenterAndExpand"
+                                JustifyContent="SpaceEvenly">
+                                <Label Style="{DynamicResource LblSubTitle}"  Text="6008 **** **** 5915 " HorizontalOptions="StartAndExpand" />
+                                <Label Style="{DynamicResource LblMidTitle}"  Text="24,000 pts " HorizontalOptions="EndAndExpand" />
+                            </FlexLayout>
+                            <Button   Text="Edit" Clicked="FlyBuysBtn_Clicked"/>
+
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <Label Style="{DynamicResource LblTitle}"  Text="Delivery Adresses" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+
+                <StackLayout  Margin="0" Padding="10">
+                    <Frame>
+                        <StackLayout  HeightRequest="200" Padding="10">
+                            
+                            <Label Style="{DynamicResource LblSubTitle}" FontAttributes="Bold" Text="Jane Doe" HorizontalOptions="CenterAndExpand" />
+                            <Label Style="{DynamicResource LblMidTitle}"  Text="72 Hereford Avenue" HorizontalOptions="StartAndExpand" />
+                            <Label Style="{DynamicResource LblMidTitle}"  Text="Mount Observation" HorizontalOptions="StartAndExpand" />
+                            <Label Style="{DynamicResource LblMidTitle}"  Text="SA 5255" HorizontalOptions="StartAndExpand" />
+                            <Button   Text="Edit" Clicked="AddressBtn_Clicked"/>
+                            
+                        </StackLayout>
+                    </Frame>
+                   
+                </StackLayout>
+                
+                <Label Style="{DynamicResource LblTitle}"  Text="Transaction History" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+
+                <StackLayout  Margin="0" Padding="10">
+                    <Frame>
+                        <StackLayout>
+                            <Grid   ColumnDefinitions="{OnIdiom Phone='5*,5*', Default='5*,5*'}" >
+                                <StackLayout Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label  Style="{DynamicResource LblMidTitle}"   Text="Tue 11 Feb"  />
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label  Style="{DynamicResource LblMidTitle}" FontAttributes="Bold"  Text="$85.00"  />
+                                </StackLayout>
+                                <StackLayout Grid.Column="0" Grid.Row="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label  Style="{DynamicResource LblMidTitle}"   Text="Mon 11 Jan"  />
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" Grid.Row="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label  Style="{DynamicResource LblMidTitle}" FontAttributes="Bold"  Text="$90.00"  />
+                                </StackLayout>
+                                <StackLayout Grid.Column="0" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label  Style="{DynamicResource LblMidTitle}"   Text="Wed 17 Dec"  />
+                                </StackLayout>
+                                <StackLayout Grid.Column="1" Grid.Row="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                    <Label  Style="{DynamicResource LblMidTitle}" FontAttributes="Bold"  Text="$75.00"  />
+                                </StackLayout>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        
+        <!-- Menu -->
+        <v:NavBarView
+			x:Name="NavBar"
+			Grid.Row="{OnIdiom Phone=2, Default=0}"/>
+
+        <!-- Widget panel -->
+        <!--<v:WidgetsPanel
+			IsVisible="{OnIdiom Phone=False, Default=True}"
+			Grid.Column="{OnIdiom Phone=0, Default=2}" />-->
+
+    </Grid>
+
+</ContentPage>

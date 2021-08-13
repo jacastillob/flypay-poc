@@ -1,0 +1,62 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="FlyPay.LoginPage"
+			 NavigationPage.HasNavigationBar="False"
+			 BackgroundColor="{DynamicResource PageBackgroundColor}">
+    <ContentPage.Content>
+        <StackLayout Spacing="5">
+            <Frame BorderColor="Transparent"
+				   HasShadow="True"
+				   HeightRequest="80"
+				   Margin="0"
+				   Padding="0">
+                <Frame.Background>
+                    <!-- StartPoint defaults to (0,0) -->
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Color="#00b5e2 "
+										Offset="0.1" />
+                        <GradientStop Color="#003da5"
+										Offset="0.4" />
+                        <GradientStop Color="#d40f7d"
+										Offset="1.1" />
+                    </LinearGradientBrush>
+
+
+                </Frame.Background>
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Image Source="flypay_d_100_80px.svg" WidthRequest="100" HeightRequest="80"/>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout>
+                <Label   Style="{DynamicResource LblTitle}"  Text="Existing account" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                <Label   Style="{DynamicResource LblSubTitle}" Text="Enter your details to login" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+
+            </StackLayout>
+
+            <Grid Padding="10">
+                <Label  Grid.Row="{OnIdiom Phone=0, Default=0}" Style="{DynamicResource LblTitleEntry}"  FontAttributes="Bold"  Text="Email or Mobile" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />
+                <Entry  Grid.Row="{OnIdiom Phone=1, Default=1}" Placeholder="Email or Mobile" Text="jane.doe@email.com"/>
+                <Label  Grid.Row="{OnIdiom Phone=2, Default=2}" Style="{DynamicResource LblTitleEntry}"  FontAttributes="Bold"  Text="Password" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />
+                <Entry  Grid.Row="{OnIdiom Phone=3, Default=3}" Placeholder="Password" IsPassword="true" Text="12345" />
+                <Button WidthRequest="200" Grid.Row="{OnIdiom Phone=4, Default=4}" Text="Login"  Clicked="LoginBtn_Clicked"/>
+            </Grid>
+            <FlexLayout
+								AlignItems="Center"
+								AlignContent="CenterAndExpand"
+								JustifyContent="SpaceEvenly">
+
+                <BoxView class="HRule" />
+                <Label Style="{DynamicResource LblTitle}"  Text="Or" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                <BoxView class="HRule" />
+
+            </FlexLayout>
+            <StackLayout Padding="5">
+                <Button WidthRequest="200"  Text="Sign up" BackgroundColor="{DynamicResource Background_DarkGray}"/>
+            </StackLayout>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
