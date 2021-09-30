@@ -6,8 +6,6 @@ Proof of concept for FlyPay using .net 6.0 MAUI to create a new mobile experienc
 
 The following ecosystem displays how currently FlyPay enables merchants and regular customers to pay. Fintech have identified  a gap or next desirable stage that might exist for a new FlyPay mobile application which could serve as an interim stage between the current FlyPay Web Application and the Digital 
 
-## Current FlyPay Ecosystem
-![image](https://user-images.githubusercontent.com/86338743/126276638-a2eacbf1-1174-4423-a0ca-75de2aee90ca.png)
 
 ## RoadMap
 
